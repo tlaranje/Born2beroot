@@ -1,0 +1,9 @@
+
+-- Entre no root
+	su -
+
+-- Adicionar grupo a um usuario
+	usermod -aG [Nome do grupo] [Nome do usuario]
+
+-- Ver discos do sitema
+	sudo fdisk -l
