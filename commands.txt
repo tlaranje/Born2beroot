@@ -1,9 +1,39 @@
 
--- Entre no root
-	su -
-
--- Adicionar grupo a um usuario
-	usermod -aG [Nome do grupo] [Nome do usuario]
-
--- Ver discos do sitema
+-- Check signature
+	shasum Debian.vdi
+-- UFW
+	sudo service ufw status
+	sudo dpkg -s ufw
+	sudo ufw status numbered
+	sudo ufw allow <num_port>
+	sudo ufw delete <num_rule>
+-- SSH
+	sudo service ssh status
+	sudo ssh root@localhost -p 4241
+	ssh newuser@localhost -p 4241
+-- Check OS
+	sudo uname --kernel-version
+-- Check groups
+	sudo groups <username>
+-- Add new user
+	sudo adduser <username>
+-- Add new group
+	sudo addgroup <groupname>
+-- Add user to group
+	sudo adduser <username> <groupname>
+-- Check hostname
+	hostname
+-- Change hostname
+	sudo hostnamectl hostname <newhostname>
+-- Check all partitions
 	sudo fdisk -l
+-- Check sudo
+	which sudo
+-- Check sudo rules
+	sudo nano /etc/sudoers.d/sudo_config
+-- Check sudo logs
+	su
+	cd /var/log/sudo
+	cat sudo_config
+-- Check crontab script
+	
