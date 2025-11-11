@@ -41,7 +41,6 @@
 
 -- Check crontab script
 	sudo crontab -e
-*/10 * * * * sh /home/tlaranje/monitoring.sh
 
 1. Como funciona uma máquina virtual:
 Uma máquina virtual funciona criando um ambiente isolado dentro do computador
@@ -73,7 +72,6 @@ expandidos ou movidos, mesmo enquanto o sistema está em execução.
 É uma ferramenta simples para gerir o firewall no Linux.
 Serve para controlar o acesso às portas da rede, permitindo ou bloqueando
 conexões conforme necessário.
-Exemplo: podes abrir ou fechar portas específicas para proteger o sistema.
 
 9. SSH:
 É um protocolo usado para aceder a outro computador remotamente de forma segura.
