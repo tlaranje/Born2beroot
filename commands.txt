@@ -1,39 +1,87 @@
 
 -- Check signature
 	shasum Debian.vdi
+
 -- UFW
-	sudo service ufw status
-	sudo dpkg -s ufw
-	sudo ufw status numbered
-	sudo ufw allow <num_port>
-	sudo ufw delete <num_rule>
+	See ufw status and ports- sudo ufw status
+	Add new port to ufw - sudo ufw allow <num_port>
+	Delte port - sudo ufw delete <num_rule>
+
 -- SSH
-	sudo service ssh status
-	sudo ssh root@localhost -p 4241
-	ssh newuser@localhost -p 4241
+	See ssh status - sudo service ssh status
+	Connect via ssh wiht a root user - sudo ssh root@localhost -p 4241
+	Connect via ssh wihtout a root user - ssh <username>@localhost -p 4241
+
+-- Groups
+	View groups - sudo groups <username>
+	Add new group - sudo addgroup <groupname>
+	Add user to the group - sudo adduser <username> <groupname>
+
+-- User
+	Add new user - sudo useradd <username>
+	Delete a user - sudo userdel -r <username>
+	Change password of user - sudo passwd <username>
+	View users - sudo grep '/home' /etc/passwd | cut -d: -f1
+
+-- Hostname
+	See hostname - hostname
+	Change hostname - sudo hostnamectl hostname <newhostname>
+
+-- Sudo
+	Check sudo config - sudo nano /etc/sudoers.d/sudo_config
+	Check sudo config for the days unitl expire - sudo nano /etc/login.defs
+	Check password rules - sudo nano /etc/pam.d/common-password
+	View sudo logs - sudo cat /var/log/sudo/sudo_config
+
 -- Check OS
 	sudo uname --kernel-version
--- Check groups
-	sudo groups <username>
--- Add new user
-	sudo adduser <username>
--- Add new group
-	sudo addgroup <groupname>
--- Add user to group
-	sudo adduser <username> <groupname>
--- Check hostname
-	hostname
--- Change hostname
-	sudo hostnamectl hostname <newhostname>
+
 -- Check all partitions
-	sudo fdisk -l
--- Check sudo
-	which sudo
--- Check sudo rules
-	sudo nano /etc/sudoers.d/sudo_config
--- Check sudo logs
-	su
-	cd /var/log/sudo
-	cat sudo_config
+	sudo lsblk
+
 -- Check crontab script
-	
+	sudo crontab -e
+*/10 * * * * sh /home/tlaranje/monitoring.sh
+
+1. Como funciona uma máquina virtual:
+Uma máquina virtual funciona criando um ambiente isolado dentro do computador
+físico, usando um software chamado hipervisor.
+
+2. Escolha do sistema operacional:
+Escolhi o Debian, porque é o recomendado e e mais facil de instalar.
+
+3. Diferenças básicas entre Rocky e Debian:
+Rocky é mais usado em empresas e servidores grandes.
+Debian é mais usado por pessoas que querem um sistema simples, estável e livre.
+
+4. Propósito das máquinas virtuais:
+Permitem usar vários sistemas operacionais no mesmo computador, facilitando
+testes, segurança e isolamento.
+
+6. Diferença entre aptitude e apt, e o que é AppArmor:
+O aptitude e o apt servem para instalar e atualizar programas, mas o aptitude
+tem mais opções e é um pouco mais avançado.
+O AppArmor ajuda a proteger o sistema, controlando o que cada programa pode
+fazer.
+
+7. O que e LVM e como funciona:
+É um sistema dinâmico de gerenciamento de armazenamento.
+O LVM permite criar volumes lógicos que podem ser facilmente redimensionados,
+expandidos ou movidos, mesmo enquanto o sistema está em execução.
+
+8. UFW:
+É uma ferramenta simples para gerir o firewall no Linux.
+Serve para controlar o acesso às portas da rede, permitindo ou bloqueando
+conexões conforme necessário.
+Exemplo: podes abrir ou fechar portas específicas para proteger o sistema.
+
+9. SSH:
+É um protocolo usado para aceder a outro computador remotamente de forma segura.
+Serve para ligar-se a servidores ou outras máquinas através da linha de
+comandos, permitindo executar comandos como se estivesses fisicamenteno outro
+computador.
+
+10. Cron:
+É um serviço que permite agendar tarefas automáticas no Linux.
+Serve para executar comandos ou scripts em horários específicos, como fazer
+backups, atualizações ou limpeza de ficheiros automaticamente.
