@@ -16,6 +16,7 @@
 	View groups - sudo groups <username>
 	Add new group - sudo addgroup <groupname>
 	Add user to the group - sudo adduser <username> <groupname>
+	Delete group - sudo groupdel <groupname>
 
 -- User
 	Add new user - sudo useradd <username>
@@ -32,6 +33,9 @@
 	Check sudo config for the days unitl expire - sudo nano /etc/login.defs
 	Check password rules - sudo nano /etc/pam.d/common-password
 	View sudo logs - sudo cat /var/log/sudo/sudo_config
+	sudo chage -M 30 <username>
+	sudo chage -m 2 <username>
+	sudo chage -W 7 <username>
 
 -- Check OS
 	sudo uname --kernel-version
